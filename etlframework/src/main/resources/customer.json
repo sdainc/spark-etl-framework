@@ -1,0 +1,22 @@
+{
+  "appName"              : "Load customer_report",
+  "sourceType"           : "file",
+  "rawFileName"          : "customer_report",
+  "rawFilePattern"       : "customer_*.csv",
+  "appDir"               : "appdirect",
+  "tableDir"             : "customer_report",
+  "inFileType"           : "csv",
+  "readDelim"            : ",",
+  "writeDelim"           : ",",
+  "saveMode"             : "overwrite",
+  "scdType"              : "type2",
+  "outFileType"          : "csv",
+  "rawFileSchema"        : "customerID STRING, customerUUID STRING, active STRING, name STRING, createdOn STRING, companyIDRoles STRING, email STRING, phone STRING, channelRoles STRING, lastSuccessfulLogin STRING, salesAgentID STRING, salesAgentEmail STRING",
+  "sqlSelect"            : "customerID, customerUUID, active, name, createdOn, companyIDRoles, email, phone, channelRoles, lastSuccessfulLogin, salesAgentID, salesAgentEmail",
+  "sqlAudit"             : "current, effectivedate, enddate, rowhash, partitionKey",
+  "currentTable"         : "customer_report_final",
+  "finalFileSchema"      : "customerID STRING, customerUUID STRING, active STRING, name STRING, createdOn STRING, companyIDRoles STRING, email STRING, phone STRING, channelRoles STRING, lastSuccessfulLogin STRING, salesAgentID STRING, salesAgentEmail STRING, current STRING, effectiveDate STRING, endDate STRING, rowHash STRING, partitionKey INT",
+  "currentTableMergeKey" : "customerUUID",
+  "rawFileMergeKey"      : "customerUUID",
+  "isPartitioned"        : "Y"
+}
