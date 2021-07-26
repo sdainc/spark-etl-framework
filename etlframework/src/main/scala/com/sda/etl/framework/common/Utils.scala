@@ -169,24 +169,6 @@ object Utils {
   }
 
 
-  /*
-    def getPartitionFilePath(appConfig: AppConfig, operationType: OperationType): String = {
-
-      val filePath: String = operationType match {
-        // No partitionkey required
-        case OperationType.READ_LANDING => appConfig.rawBaseDir + appConfig.fileConfig.appDir + "/" + appConfig.fileConfig.tableDir + "/" + appConfig.fileConfig.rawFilePattern
-        // No partitionkey required
-        case OperationType.READ_INTERMEDIATE => appConfig.processBaseDir + appConfig.fileConfig.appDir + "/" + appConfig.fileConfig.tableDir + "/temp"
-        // No partitionkey required, its a full table read
-        case OperationType.READ_FINAL => appConfig.loadBaseDir + appConfig.fileConfig.appDir + "/" + appConfig.fileConfig.tableDir
-        // partitionkey required if table is partitioned
-        case OperationType.WRITE_FINAL => appConfig.loadBaseDir + appConfig.fileConfig.appDir + "/" + appConfig.fileConfig.tableDir
-        // No partitionkey required
-        case OperationType.WRITE_INTERMEDIATE => appConfig.processBaseDir + appConfig.fileConfig.appDir + "/" + appConfig.fileConfig.tableDir + "/temp"
-      }
-      filePath
-    }
-
     def getHeader(appConfig: AppConfig, operationType: OperationType): String = {
 
       val header: String = operationType match {
@@ -228,22 +210,6 @@ object Utils {
     }
 
 
-    def createPartitionKey(appConfig: AppConfig): Unit = {
 
-      val now = Calendar.getInstance()
-      val year = now.get(Calendar.YEAR)
-      val month = "%02d".format(now.get(Calendar.MONTH) + 1)
-      val date = "%02d".format(now.get(Calendar.DATE))
-      val partitionKey = appConfig.pKey // year + month + date
-
-      appConfig.partitionKey = partitionKey.toInt
-
-      appConfig.sqlAuditCols = appConfig.sqlAuditCols.replace("partition_key", partitionKey)
-
-    }
-
-
-
-  */
 }
 
